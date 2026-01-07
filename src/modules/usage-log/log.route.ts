@@ -1,12 +1,12 @@
 import { Router } from "express";
 import { logController } from "./log.controller";
 import auth from "../../middleware/auth";
-import { Role } from "../../generated/prisma/enums";
+// import { Role } from "../../generated/prisma/enums";
 
 const logRouter = Router();
 
-logRouter.post("/", auth([Role.Student]), logController.createUsageLog);
+// logRouter.post("/", auth([Role.Student]), logController.createUsageLog);
 logRouter.get("/", logController.getUsageLogs);
-logRouter.patch("/:id", auth(), logController.updateUsageLog);
+logRouter.patch("/:id", logController.updateUsageLog);
 
 export default logRouter;
